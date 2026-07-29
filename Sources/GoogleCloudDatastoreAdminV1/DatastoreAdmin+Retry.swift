@@ -112,14 +112,14 @@ extension Clients {
 
     public func getIndex(
       request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.Index {
+    ) async throws -> GoogleCloudDatastoreAdminV1.Index {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
           (r: GetIndexRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleDatastoreAdminV1.Index
+            -> GoogleCloudDatastoreAdminV1.Index
           in
           return try await self.inner.getIndex(request: r, options: o)
         })
@@ -127,14 +127,14 @@ extension Clients {
 
     public func listIndexes(
       request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse {
+    ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse {
       try await self._intercept(
         request: request,
         options: options,
         idempotent: true,
         action: {
           (r: ListIndexesRequest, o: GoogleCloudGax.RequestOptions) async throws
-            -> GoogleDatastoreAdminV1.ListIndexesResponse
+            -> GoogleCloudDatastoreAdminV1.ListIndexesResponse
           in
           return try await self.inner.listIndexes(request: r, options: o)
         })

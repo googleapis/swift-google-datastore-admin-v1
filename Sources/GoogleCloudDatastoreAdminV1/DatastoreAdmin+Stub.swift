@@ -43,11 +43,11 @@ extension Clients {
 
     func getIndex(
       request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.Index
+    ) async throws -> GoogleCloudDatastoreAdminV1.Index
 
     func listIndexes(
       request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse
+    ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse
 
     func listOperations(
       request: GoogleLongRunning.ListOperationsRequest, options: GoogleCloudGax.RequestOptions
@@ -167,7 +167,7 @@ extension Clients {
 
     public func getIndex(
       request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.Index {
+    ) async throws -> GoogleCloudDatastoreAdminV1.Index {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.projectId as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.project_id' is not set or is empty")
@@ -185,12 +185,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleDatastoreAdminV1.Index.self, from: data)
+        GoogleCloudDatastoreAdminV1.Index.self, from: data)
     }
 
     public func listIndexes(
       request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse {
+    ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.projectId as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.project_id' is not set or is empty")
@@ -209,7 +209,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleDatastoreAdminV1.ListIndexesResponse.self, from: data)
+        GoogleCloudDatastoreAdminV1.ListIndexesResponse.self, from: data)
     }
 
     public func listOperations(

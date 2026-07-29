@@ -417,7 +417,7 @@ public class DatastoreAdminClient: Clients.DatastoreAdminProtocol {
   /// @Snippet(path: "DatastoreAdmin_GetIndex")
   public func getIndex(
     request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleDatastoreAdminV1.Index {
+  ) async throws -> GoogleCloudDatastoreAdminV1.Index {
     try await self.inner.getIndex(request: request, options: options)
   }
 
@@ -428,7 +428,7 @@ public class DatastoreAdminClient: Clients.DatastoreAdminProtocol {
   /// @Snippet(path: "DatastoreAdmin_ListIndexes")
   public func listIndexes(
     request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse {
+  ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse {
     try await self.inner.listIndexes(request: request, options: options)
   }
 
@@ -441,7 +441,7 @@ public class DatastoreAdminClient: Clients.DatastoreAdminProtocol {
     byItem: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Index, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse in
+      (token: Swift.String) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listIndexes(request: request, options: options)
@@ -563,11 +563,11 @@ extension Clients {
       .PollableOperation<Index>
 
     /// See `DatastoreAdminClient.getIndex`.
-    func getIndex(request: GetIndexRequest) async throws -> GoogleDatastoreAdminV1.Index
+    func getIndex(request: GetIndexRequest) async throws -> GoogleCloudDatastoreAdminV1.Index
 
     /// See `DatastoreAdminClient.listIndexes`.
     func listIndexes(request: ListIndexesRequest) async throws
-      -> GoogleDatastoreAdminV1.ListIndexesResponse
+      -> GoogleCloudDatastoreAdminV1.ListIndexesResponse
 
     /// See `DatastoreAdminClient.listIndexes`.
     func listIndexes(
@@ -648,12 +648,12 @@ extension Clients {
     /// See `DatastoreAdminClient.getIndex`.
     func getIndex(
       request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.Index
+    ) async throws -> GoogleCloudDatastoreAdminV1.Index
 
     /// See `DatastoreAdminClient.listIndexes`.
     func listIndexes(
       request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse
+    ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse
 
     /// See `DatastoreAdminClient.listIndexes`.
     func listIndexes(
@@ -823,25 +823,25 @@ extension Clients.DatastoreAdminProtocol {
       initialState: .init(done: false, result: nil), poll: poll)
   }
 
-  public func getIndex(request: GetIndexRequest) async throws -> GoogleDatastoreAdminV1.Index {
+  public func getIndex(request: GetIndexRequest) async throws -> GoogleCloudDatastoreAdminV1.Index {
     try await self.getIndex(request: request, options: .init())
   }
 
   public func getIndex(
     request: GetIndexRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleDatastoreAdminV1.Index {
+  ) async throws -> GoogleCloudDatastoreAdminV1.Index {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
   public func listIndexes(request: ListIndexesRequest) async throws
-    -> GoogleDatastoreAdminV1.ListIndexesResponse
+    -> GoogleCloudDatastoreAdminV1.ListIndexesResponse
   {
     try await self.listIndexes(request: request, options: .init())
   }
 
   public func listIndexes(
     request: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse {
+  ) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -855,7 +855,7 @@ extension Clients.DatastoreAdminProtocol {
     byItem: ListIndexesRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Index, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleDatastoreAdminV1.ListIndexesResponse in
+      (token: Swift.String) async throws -> GoogleCloudDatastoreAdminV1.ListIndexesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
